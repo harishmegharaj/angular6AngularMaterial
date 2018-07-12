@@ -1,0 +1,56 @@
+<div>
+  <div class="modal-header">
+      <h3 class="modal-title">Edit Row</h3>
+  </div>
+  <div class="modal-body">
+    
+   
+  
+	<div class="block">
+  		<label>Id</label>
+  		<input class="input" type="text" disabled value="" />
+	</div>
+	<div class="block">
+  		<label>Name</label>
+  		<input class="input" type="text" ng-model=""/>
+	</div>
+	<div class="block">
+  		<label>Value</label>
+  		<input class="input" type="text" ng-model=""/>
+	</div>
+	<div class="block">
+  		<label>Desc</label>
+  		<input class="input" type="text" ng-model=""/>
+	</div>
+	<div class="block">
+  		<label>Created by</label>
+  		<input class="input" type="text" ng-model=""/>
+	</div>
+	<div class="block">
+  		<label>Created On</label>
+  		<input class="input" type="text" ng-model=""/>
+	</div>
+	<div class="block">
+  		<label>Last Updated</label>
+  		<input class="input" type="text" ng-model=""/>
+	</div>
+	<div class="block">
+  		<label>Last update On</label>
+  		<input class="input" type="text" ng-model=""/>
+	</div>
+		
+
+	
+  </div>
+  <div class="modal-footer">
+      <button class="btn btn-primary" ng-click="save()">Save</button>
+      <button class="btn btn-primary" ng-click="remove()">Delete</button>
+      <button class="btn btn-primary" ng-click="$close()">Cancel</button>
+  </div>
+</div>
+<!-- <h1 mat-dialog-title>Hi</h1>
+<div mat-dialog-content>
+  <p>What's your favorite animal?</p>
+  <input matInput [(ngModel)]="data.Id" value="data.Id"/>
+ 
+</div> -->

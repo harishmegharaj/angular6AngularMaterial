@@ -1,0 +1,58 @@
+<mat-form-field>
+		<input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+	  </mat-form-field>
+	  
+	  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+	  
+		<!-- Position Column -->
+		<ng-container matColumnDef="ID">
+		  <th mat-header-cell *matHeaderCellDef> ID. </th>
+		  <td mat-cell *matCellDef="let element"> {{element.ID}} </td>
+		</ng-container>
+	  
+	
+		<ng-container matColumnDef="CREATED_BY">
+		  <th mat-header-cell *matHeaderCellDef> Name </th>
+		  <td mat-cell *matCellDef="let element"> {{element.CREATED_BY}} </td>
+		</ng-container>
+	  
+	
+		<ng-container matColumnDef="CREATED_ON">
+		  <th mat-header-cell *matHeaderCellDef> Value </th>
+		  <td mat-cell *matCellDef="let element"> {{element.CREATED_ON}} </td>
+		</ng-container>
+	  
+	
+		<ng-container matColumnDef="LAST_UPDATED_BY">
+		  <th mat-header-cell *matHeaderCellDef> Desc </th>
+		  <td mat-cell *matCellDef="let element"> {{element.LAST_UPDATED_BY}} </td>
+		</ng-container>
+
+		<ng-container matColumnDef="LAST_UPDATED_ON">
+		  <th mat-header-cell *matHeaderCellDef> Created By. </th>
+		  <td mat-cell *matCellDef="let element"> {{element.LAST_UPDATED_ON}} </td>
+		</ng-container>
+	  
+	
+		<ng-container matColumnDef="API_VERSION_ID">
+		  <th mat-header-cell *matHeaderCellDef> CREATED ON </th>
+		  <td mat-cell *matCellDef="let element"> {{element.API_VERSION_ID}} </td>
+		</ng-container>
+	  
+	
+		<ng-container matColumnDef="ENDPOINT_ID">
+		  <th mat-header-cell *matHeaderCellDef> Last Updated </th>
+		  <td mat-cell *matCellDef="let element"> {{element.ENDPOINT_ID}} </td>
+		</ng-container>
+	  
+	
+		
+	  
+		<tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+		<tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+	  </table>
+	  
+	  
+	  <!-- Copyright 2018 Google Inc. All Rights Reserved.
+		  Use of this source code is governed by an MIT-style license that
+		  can be found in the LICENSE file at http://angular.io/license -->
