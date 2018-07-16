@@ -5,8 +5,8 @@ import { AppComponent } from './app.component';
 import { LazyLoadModule } from './lazy-load/lazy-load.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CoreModule } from './core/core.module';
-
-
+import { WebApiObservableService } from './web-api-observable.service';
+import { HttpModule } from '@angular/http';
 
 @NgModule({
   declarations: [
@@ -17,9 +17,10 @@ import { CoreModule } from './core/core.module';
     BrowserModule,
     LazyLoadModule,
     CoreModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    HttpModule
   ],
-  providers: [],
+  providers: [WebApiObservableService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

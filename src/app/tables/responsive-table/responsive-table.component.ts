@@ -4,6 +4,7 @@ import { MatPaginator, MatDialog, MatTableDataSource, MatSort, MatRow } from '@a
 import { DialogOverviewExampleDialog } from "./DialogOverviewExampleDialog";
 import { SystemDataConfig } from './systemConfigStubData';
 import { DataSource } from '@angular/cdk/table';
+import { WebApiObservableService } from '../../web-api-observable.service';
 
 export interface PeriodicElement {
     ID : any;
@@ -93,12 +94,20 @@ export interface PeriodicElement {
   templateUrl: './responsive-table.component.html',
   styleUrls: ['./responsive-table.component.scss']
 })
-export class ResponsiveTableComponent {
-  constructor(public dialog: MatDialog) {}
+export class ResponsiveTableComponent implements OnInit{
+
+  constructor(public dialog: MatDialog, private userRestAPI: WebApiObservableService) {}
   highlightedRows = [];
   displayedColumns: string[] = ['ID', 'PARAM_NAME', 'PARAM_VALUE', 'DESCRIPTION','CREATED_BY', 'CREATED_ON', 'LAST_UPDATED_BY', 'LAST_UPDATED_ON'];
+ 
   dataSource = new MatTableDataSource(ELEMENT_DATA);
+  ngOnInit() {
+    //this.userRestAPI.getService('');
+    this.userRestAPI.getService('').subscribe(
+      result => {
+      }, err => { })
 
+  }
   applyFilter(filterValue: string) {
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
